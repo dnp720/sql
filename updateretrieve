@@ -18,7 +18,7 @@ try {
         queryText = request.Results[0].QueryText,
         categoryID = request.Results[0].CategoryID;
  
-    var updated_query = queryText + ' where i.userId NOT NULL ';
+    var updated_query = queryText + ' where i.id NOT null ';
 
     var request = api.retrieve("DataExtension", ["CustomerKey"], {
             Property: "Name",
