@@ -12,7 +12,7 @@
         var request = api.retrieve("QueryDefinition", ["CustomerKey", "ObjectID", "QueryText", "CategoryID"], {
             Property: "CustomerKey", 
             SimpleOperator: "equals",
-            Value: "8499CF2C-992D-46AC-A807-B4660C6A3769" 
+            Value: "D73AF0AE-86FD-4720-A0E4-DFB9D7325EF8" 
         });
 
             var objectID = request.Results[0].ObjectID,
@@ -38,7 +38,7 @@
             TargetUpdateType: "Overwrite",
             QueryText: updated_query,
             DataExtensionTarget: {
-                Name: "ContatctDeleCatalogObjectETL_DP_IStion_DP",
+                Name: "CatalogObjectETL_DP_IS",
                 CustomerKey: targetKey
             }
         };
