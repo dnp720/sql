@@ -14,8 +14,7 @@
             SimpleOperator: "equals",
             Value: "D73AF0AE-86FD-4720-A0E4-DFB9D7325EF8" 
         });
-
-/*
+        
             var objectID = request.Results[0].ObjectID,
             queryText = request.Results[0].QueryText,
             categoryID = request.Results[0].CategoryID;
@@ -44,7 +43,7 @@
             }
         };
 
-        var result = api.updateItem("QueryDefinition", config); */
+        var result = api.updateItem("QueryDefinition", config); 
 
         Write("version1.2"+Stringify(request));
   
