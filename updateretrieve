@@ -1,0 +1,53 @@
+<script runat="server">
+
+    Platform.Load("core", "1");
+
+    var api = new Script.Util.WSProxy();
+ 
+ try {
+
+        var name = "MyNewQuery";
+
+        var request = api.retrieve("QueryDefinition", ["CustomerKey", "ObjectID", "QueryText"], {
+            Property: "CustomerKey", 
+            SimpleOperator: "equals",
+            Value: "8499CF2C-992D-46AC-A807-B4660C6A3769" 
+        });
+
+/*        var objectID = request.Results[0].ObjectID,
+            categoryID = request.Results[0].CategoryID;
+
+        var request = api.retrieve("DataExtension", ["CustomerKey"], {
+            Property: "Name",
+            SimpleOperator: "equals",
+            Value: "MyDataExtension"
+        });
+
+        var targetKey = request.Results[0].CustomerKey;
+
+        var updated_query =  'SELECT TOP 50 SubscriberKey, EmailAddress FROM _Subscribers';
+
+        var config = {
+            ObjectID: objectID,
+            Description: "My updated query",
+            CategoryID: categoryID,
+            TargetType: "DE",
+            TargetUpdateType: "Overwrite",
+            QueryText: updated_query,
+            DataExtensionTarget: {
+                Name: "MyDataExtension",
+                CustomerKey: targetKey
+            }
+        };
+
+        var result = api.updateItem("QueryDefinition", config);
+*/
+        Write("version1"+Stringify(request));
+  
+ } catch(error) {
+
+        Write(Stringify(error));
+        
+    } 
+
+</script>
