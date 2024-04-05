@@ -19,6 +19,11 @@
             queryText = request.Results[0].QueryText,
             categoryID = request.Results[0].CategoryID;
 
+        var request = api.retrieve("DataExtension", ["CustomerKey"], , {
+            Property: "Name",
+            SimpleOperator: "equals",
+            Value: "ContatctDeletion_DP"
+        }),
         var targetKey = request.Results[0].Customerkey;
         var updated_query =  queryText + ' where c.Id is NOT null ';
 
