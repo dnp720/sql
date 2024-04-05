@@ -43,7 +43,7 @@ try {
  
     var result = api.updateItem("QueryDefinition", config); */
 
-    Write("version321.1"+Stringify(result)); 
+    Write("version321.1"+Stringify(reuqest)); 
  
 } catch(error) {
  
@@ -52,6 +52,6 @@ try {
  
 </script>
 <body>
-mark
+body
 </body>
 </html>
