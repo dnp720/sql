@@ -31,7 +31,7 @@
             QueryText: updated_query
             DataExtensionTarget: {
                 Name: "ContatctDeletion_DP",
-                CustomerKey: "targetKey"
+                CustomerKey: targetKey
             }
         };
 
