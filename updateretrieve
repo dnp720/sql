@@ -35,7 +35,7 @@
             Description: "My updated query",
             CategoryID: categoryID,
             TargetType: "DE",
-            TargetUpdateType: "Overwrite",
+            TargetUpdateType: "Update",
             QueryText: updated_query,
             DataExtensionTarget: {
                 Name: "ContatctDeletion_DP",
