@@ -1,6 +1,5 @@
 <html>
-<script runat="server">
-    
+<script runat ="server">
     Platform.Load("core","1");
     var api = new Script.Util.WSProxy();
    
@@ -42,6 +41,7 @@
       Write(Stringify(error));
      
   }
+</script>
     <body>
         body
     </body>
