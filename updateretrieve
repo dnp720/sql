@@ -24,7 +24,7 @@
         var config = {
             ObjectID: objectID,
             Description: "My updated query",
-            TargetType: "ContatctDeletion_DP",
+            TargetType: "DE",
             TargetUpdateType: "Overwrite",
             CategoryID: categoryID,
             QueryText: updated_query
