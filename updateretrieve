@@ -42,7 +42,7 @@ try {
     };
  
     var result = api.updateItem("QueryDefinition", config); */
-    Write("version23.1"+Stringify(request));
+    Write("version223.1"+Stringify(request));
  
 } catch(error) {
  
