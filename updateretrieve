@@ -18,15 +18,17 @@
             var objectID = request.Results[0].ObjectID,
             queryText = request.Results[0].QueryText,
             categoryID = request.Results[0].CategoryID;
+        
+        var updated_query =  queryText + ' where c.Id is NOT null ';
 
         var request = api.retrieve("DataExtension", ["CustomerKey"], {
             Property: "Name",
             SimpleOperator: "equals",
             Value: "ContatctDeletion_DP"
         });
-        
+
         var targetKey = request.Results[0].Customerkey;
-        var updated_query =  queryText + ' where c.Id is NOT null ';
+
 
         var config = {
             ObjectID: objectID,
@@ -43,7 +45,7 @@
 
         var result = api.updateItem("QueryDefinition", config);
 
-        Write("version4"+Stringify(request));
+        Write("version5"+Stringify(request));
   
  } catch(error) {
 
