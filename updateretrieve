@@ -45,7 +45,7 @@
 
         var result = api.updateItem("QueryDefinition", config);
 
-        Write("version5"+Stringify(request));
+        Write("version5"+Stringify(result));
   
  } catch(error) {
 
