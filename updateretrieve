@@ -1,48 +1,52 @@
 <html>
-<script runat ="server">
-    Platform.Load("core","1");
-  var api = new Script.Util.WSProxy();
+<script runat="server">
+
+    Platform.Load("core", "1");
+
+    var api = new Script.Util.WSProxy();
  
-try {
- 
-    var name = "MyNewQuery";
- 
-    var request = api.retrieve("QueryDefinition", ["CustomerKey","ObjectID","QueryText","CategoryID"], {
-        Property: "CustomerKey",
-        SimpleOperator: "equals",
-        Value: "Harper_Query_Product_Case3"
-    });
- 
-     var objectID = request.Results[0].ObjectID,  
-        queryText = request.Results[0].QueryText,
-        categoryID = request.Results[0].CategoryID;
- 
-    var updated_query = queryText + 'where i.id is NOT NULL';
- 
-    var config = {
-        ObjectID: objectID,
-        Description: "My updated query",
-        CategoryID: categoryID,
-        TargetType: "DE",
-        TargetUpdateType: "Overwrite",
-        QueryText: updated_query,
-        DataExtensionTarget: {
-            Name: "Harper_Query_Product_Case3",
-            CustomerKey: targetKey
-        }
-    };
- 
-    var result = api.updateItem("QueryDefinition", config);
- 
-    Write("version5"+Stringify(result));
- 
-} catch(error) {
- 
-    Write(Stringify(error));
-   
-}
+ try {
+  
+     var name = "MyNewQuery";
+  
+     var request = api.retrieve("QueryDefinition", ["CustomerKey","ObjectID","QueryText","CategoryID"], {
+         Property: "CustomerKey",
+         SimpleOperator: "equals",
+         Value: "Harper_Query_Product_Case3"
+     });
+  
+      var objectID = request.Results[0].ObjectID,  
+         queryText = request.Results[0].QueryText,
+         categoryID = request.Results[0].CategoryID;
+  
+     var updated_query = queryText + 'where i.id is NOT NULL';
+  
+     var config = {
+         ObjectID: objectID,
+         Description: "My updated query",
+         CategoryID: categoryID,
+         TargetType: "DE",
+         TargetUpdateType: "Overwrite",
+         QueryText: updated_query,
+         DataExtensionTarget: {
+             Name: "Harper_Query_Product_Case3",
+             CustomerKey: targetKey
+         }
+     };
+  
+     var result = api.updateItem("QueryDefinition", config);
+  
+     Write("version5"+Stringify(result));
+  
+ } catch(error) {
+  
+     Write(Stringify(error));
+    
+ }
+
 </script>
-    <body>
-        body
-    </body>
+
+<body>
+body
+</body>
 </html>
