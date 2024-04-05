@@ -23,7 +23,8 @@
             Property: "Name",
             SimpleOperator: "equals",
             Value: "ContatctDeletion_DP"
-        }),
+        });
+        
         var targetKey = request.Results[0].Customerkey;
         var updated_query =  queryText + ' where c.Id is NOT null ';
 
