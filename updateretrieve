@@ -19,18 +19,19 @@
             queryText = request.Results[0].QueryText,
             categoryID = request.Results[0].CategoryID;
 
+        var targetKey = request.Results[0].CustomerKey;
         var updated_query =  queryText + ' where c.Id is NOT null ';
 
         var config = {
             ObjectID: objectID,
             Description: "My updated query",
+            CategoryID: categoryID,
             TargetType: "DE",
             TargetUpdateType: "Overwrite",
-            CategoryID: categoryID,
             QueryText: updated_query
             DataExtensionTarget: {
                 Name: "ContatctDeletion_DP",
-                CustomerKey: "0ED6EFD9-77F9-4666-838E-15DD8FC8BB24"
+                CustomerKey: "targetKey"
             }
         };
 
