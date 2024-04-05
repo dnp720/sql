@@ -9,7 +9,7 @@
 
         var name = "MyNewQuery";
 
-        var request = api.retrieve("QueryDefinition", ["CustomerKey", "ObjectID", "QueryText"], {
+        var request = api.retrieve("QueryDefinition", ["CustomerKey", "ObjectID", "QueryText", "CategoryID"], {
             Property: "CustomerKey", 
             SimpleOperator: "equals",
             Value: "8499CF2C-992D-46AC-A807-B4660C6A3769" 
