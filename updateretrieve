@@ -19,7 +19,7 @@
             queryText = request.Results[0].QueryText,
             categoryID = request.Results[0].CategoryID;
 
-        var request = api.retrieve("DataExtension", ["CustomerKey"], , {
+        var request = api.retrieve("DataExtension", ["CustomerKey"], {
             Property: "Name",
             SimpleOperator: "equals",
             Value: "ContatctDeletion_DP"
