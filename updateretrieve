@@ -19,7 +19,7 @@
             queryText = request.Results[0].QueryText,
             categoryID = request.Results[0].CategoryID;
         
-        var updated_query =  queryText + ' where i.id is NOT null ';
+/*        var updated_query =  queryText + ' where i.id is NOT null ';
 
         var request = api.retrieve("DataExtension", ["CustomerKey"], {
             Property: "Name",
@@ -43,9 +43,9 @@
             }
         };
 
-        var result = api.updateItem("QueryDefinition", config);
+        var result = api.updateItem("QueryDefinition", config); */
 
-        Write("version5"+Stringify(request));
+        Write("version5"+Stringify(result));
   
  } catch(error) {
 
