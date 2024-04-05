@@ -1,59 +1,46 @@
 <html>
-<script runat="server">
-
-    Platform.Load("core", "1");
-
+    Platform.Load("core","1");
     var api = new Script.Util.WSProxy();
- 
- try {
-
-        var name = "MyNewQuery";
-
-        var request = api.retrieve("QueryDefinition", ["CustomerKey", "ObjectID", "QueryText", "CategoryID"], {
-            Property: "CustomerKey", 
-            SimpleOperator: "equals",
-            Value: "D73AF0AE-86FD-4720-A0E4-DFB9D7325EF8" 
-        });
-
-            var objectID = request.Results[0].ObjectID,
-            queryText = request.Results[0].QueryText,
-            categoryID = request.Results[0].CategoryID;
-
-        var request = api.retrieve("DataExtension", ["CustomerKey"], {
-            Property: "Name",
-            SimpleOperator: "equals",
-            Value: "CatalogObjectETL_DP_IS"
-        });
-
-        var targetKey = request.Results[0].Customerkey;
-        var updated_query =  queryText + ' where i.id is NOT null ';
-        
-        var config = {
-            ObjectID: objectID,
-            Description: "My updated query",
-            CategoryID: categoryID,
-            TargetType: "DE",
-            TargetUpdateType: "Overwrite",
-            QueryText: updated_query,
-            DataExtensionTarget: {
-                Name: "CatalogObjectETL_DP_IS",
-                CustomerKey: targetKey
-            }
-        };
-
-        var result = api.updateItem("QueryDefinition", config); 
-
-        Write("version1.2"+Stringify(result));
-  
- } catch(error) {
-
-        Write(Stringify(error));
-        
-    } 
-
-</script>
-
-<body>
-body
-</body>       
+   
+  try {
+   
+      var name = "MyNewQuery";
+   
+      var request = api.retrieve("QueryDefinition", ["CustomerKey","ObjectID","QueryText","CategoryID"], {
+          Property: "CustomerKey",
+          SimpleOperator: "equals",
+          Value: "TransactionETL_Query_DP"
+      });
+   
+       var objectID = request.Results[0].ObjectID,  
+          queryText = request.Results[0].QueryText,
+          categoryID = request.Results[0].CategoryID;
+   
+      var updated_query = queryText + 'where i.id is NOT NULL';
+   
+      var config = {
+          ObjectID: objectID,
+          Description: "My updated query",
+          CategoryID: categoryID,
+          TargetType: "DE",
+          TargetUpdateType: "Overwrite",
+          QueryText: updated_query,
+          DataExtensionTarget: {
+              Name: "TransactionETL_Query_DP",
+              CustomerKey: targetKey
+          }
+      };
+   
+      var result = api.updateItem("QueryDefinition", config);
+   
+      Write("version5"+Stringify(result));
+   
+  } catch(error) {
+   
+      Write(Stringify(error));
+     
+  }
+    <body>
+        body
+    </body>
 </html>
