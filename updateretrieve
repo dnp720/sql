@@ -43,7 +43,7 @@ try {
  
     var result = api.updateItem("QueryDefinition", config); 
 
-    Write("version3.9"+Stringify(result)); 
+    Write("version4"+Stringify(result)); 
  
 } catch(error) {
  
