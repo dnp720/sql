@@ -19,7 +19,6 @@
             queryText = request.Results[0].QueryText,
             categoryID = request.Results[0].CategoryID;
 
-        var targetKey = request.Results[0].CustomerKey;
         var updated_query =  queryText + ' where c.Id is NOT null ';
 
         var config = {
