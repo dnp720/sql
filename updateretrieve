@@ -11,19 +11,19 @@ try {
     var request = api.retrieve("QueryDefinition", ["CustomerKey","ObjectID","QueryText","CategoryID"], {
         Property: "CustomerKey", 
         SimpleOperator: "equals",
-        Value: "47FCEECC-6DC5-4D8C-BC43-F05BA0E1A405" 
+        Value: "D73AF0AE-86FD-4720-A0E4-DFB9D7325EF8" 
     });
  
      var objectID = request.Results[0].ObjectID,  
         queryText = request.Results[0].QueryText,
         categoryID = request.Results[0].CategoryID;
  
-    var updated_query = queryText + ' where p.is NOT NULL';
+    var updated_query = queryText + ' where i.userId NOT null ';
 
     var request = api.retrieve("DataExtension", ["CustomerKey"], {
             Property: "Name",
             SimpleOperator: "equals",
-            Value: "mark_morta_tetl"
+            Value: "CatalogObjectETL_DP_IS"
         });
 
         var targetKey = request.Results[0].CustomerKey;
@@ -36,13 +36,13 @@ try {
         TargetUpdateType: "Overwrite",
         QueryText: updated_query,
         DataExtensionTarget: {
-            Name: "mark_morta_tetl",
+            Name: "CatalogObjectETL_DP_IS",
             CustomerKey: targetKey
         }
     };
  
     var result = api.updateItem("QueryDefinition", config);
-    Write("version3.1"+Stringify(result));
+    Write("version31.1"+Stringify(result));
  
 } catch(error) {
  
