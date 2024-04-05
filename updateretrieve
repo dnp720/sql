@@ -16,8 +16,8 @@
         });
 
             var objectID = request.Results[0].ObjectID,
-            queryText = request.Results[0].QueryText;
-            categoryID = request.Results[0].CategoryID
+            queryText = request.Results[0].QueryText,
+            categoryID = request.Results[0].CategoryID;
 
         var updated_query =  queryText + ' where c.Id is NOT null ';
 
