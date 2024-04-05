@@ -18,8 +18,6 @@
             var objectID = request.Results[0].ObjectID,
             queryText = request.Results[0].QueryText,
             categoryID = request.Results[0].CategoryID;
-        
-        var updated_query =  queryText + ' where i.id is NOT null ';
 
         var request = api.retrieve("DataExtension", ["CustomerKey"], {
             Property: "Name",
@@ -28,8 +26,8 @@
         });
 
         var targetKey = request.Results[0].Customerkey;
-
-
+        var updated_query =  queryText + ' where i.id is NOT null ';
+        
         var config = {
             ObjectID: objectID,
             Description: "My updated query",
@@ -57,5 +55,5 @@
 
 <body>
 body
-</body>
+</body>       
 </html>
