@@ -13,7 +13,7 @@ try {
         SimpleOperator: "equals",
         Value: "47FCEECC-6DC5-4D8C-BC43-F05BA0E1A405" 
     });
-/* 
+ /*
      var objectID = request.Results[0].ObjectID,  
         queryText = request.Results[0].QueryText,
         categoryID = request.Results[0].CategoryID;
@@ -42,7 +42,7 @@ try {
     };
  
     var result = api.updateItem("QueryDefinition", config); */
-    Write("version33.1"+Stringify(request));
+    Write("version23.1"+Stringify(request));
  
 } catch(error) {
  
