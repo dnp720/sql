@@ -24,8 +24,14 @@
         var config = {
             ObjectID: objectID,
             Description: "My updated query",
+            TargetType: "ContatctDeletion_DP",
+            TargetUpdateType: "Overwrite",
             CategoryID: categoryID,
             QueryText: updated_query
+            DataExtensionTarget: {
+                Name: "ContatctDeletion_DP",
+                CustomerKey: "0ED6EFD9-77F9-4666-838E-15DD8FC8BB24"
+            }
         };
 
         var result = api.updateItem("QueryDefinition", config);
