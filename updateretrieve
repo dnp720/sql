@@ -19,12 +19,12 @@
             queryText = request.Results[0].QueryText,
             categoryID = request.Results[0].CategoryID;
         
-        var updated_query =  queryText + ' where c.Id is NOT null ';
+        var updated_query =  queryText + ' where i.id is NOT null ';
 
         var request = api.retrieve("DataExtension", ["CustomerKey"], {
             Property: "Name",
             SimpleOperator: "equals",
-            Value: "ContatctDeletion_DP"
+            Value: "CatalogObjectETL_DP_IS"
         });
 
         var targetKey = request.Results[0].Customerkey;
@@ -35,17 +35,17 @@
             Description: "My updated query",
             CategoryID: categoryID,
             TargetType: "DE",
-            TargetUpdateType: "Update",
+            TargetUpdateType: "Overwrite",
             QueryText: updated_query,
             DataExtensionTarget: {
-                Name: "ContatctDeletion_DP",
+                Name: "ContatctDeleCatalogObjectETL_DP_IStion_DP",
                 CustomerKey: targetKey
             }
         };
 
         var result = api.updateItem("QueryDefinition", config);
 
-        Write("version5"+Stringify(result));
+        Write("version5"+Stringify(request));
   
  } catch(error) {
 
