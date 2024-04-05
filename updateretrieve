@@ -25,13 +25,7 @@
             ObjectID: objectID,
             Description: "My updated query",
             CategoryID: categoryID,
-            TargetType: "DE",
-            TargetUpdateType: "Overwrite",
             QueryText: updated_query
-            DataExtensionTarget: {
-                Name: "ContatctDeletion_DP",
-                CustomerKey: targetKey
-            }
         };
 
         var result = api.updateItem("QueryDefinition", config);
